@@ -17,10 +17,10 @@ jobs:
 
       - name: Log in with Azure
         uses: azure/login@v1
-        with:
+        with: # Set Azure credentials secret as an input
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-        env:
-          creds: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3DEBBA7451E46C3A0B6C86967F2DB3B }}
+        env: # Or as an environment variable
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Azure Dev Provision
         run: azd provision --no-prompt
