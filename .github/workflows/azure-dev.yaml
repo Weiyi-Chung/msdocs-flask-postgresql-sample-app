@@ -19,6 +19,8 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+        env:
+          creds: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3DEBBA7451E46C3A0B6C86967F2DB3B }}
 
       - name: Azure Dev Provision
         run: azd provision --no-prompt
